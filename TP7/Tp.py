@@ -16,6 +16,7 @@ def	trace_matrice(M):		#M matrice
 	return(out)
 
 def	matrice_identite(n):				#n entier
+	"Cree une matrice identite"
 	out = [[0 for j in range(n)]for i in range(n)]	#cree la matrice vide
 	for i in range(n):
 		out[i][i] = 1
