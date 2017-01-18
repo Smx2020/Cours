@@ -7,7 +7,7 @@ def	check_matrice(M):	#M matrice
 	return(False)
 
 def	trace_matrice(M):		#M matrice
-	"Calcule la somme des coefficient de la diagonal"
+	"Calcule la somme des coefficients de la diagonal"
 	if check_matrice(M):
 		return("Erreur")
 	out = 0				#Somme des coeff
