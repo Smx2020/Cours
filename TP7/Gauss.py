@@ -64,6 +64,15 @@ def addition_multiple_ligne_c(A,i1,i2,l):
 		out.append(temp)
 	return(addition_multiple_ligne(out,i1,i2,l))
 
+def copy(A):
+    a_c = []
+	for i in range(len(A)):
+		temp = []
+		for j in range(len(A[0])):
+			temp.append(A[i][j])
+		a_c.append(temp)
+    return(a_c)
+
 ######################  Exercice Gauss  ######################################
 
 def pivot(A,j):
@@ -81,8 +90,11 @@ def pivot_max(A,j):
     return(i0)
 
 def Gauss(A):
-    for i in range(len(A)):
-        k = pivot(A,i)
+    a_c = copy(A)
+    for i in range(len(a_c)):
+        k = pivot(a_c,i)
         if i != k:
-            echange_ligne(A,i,k)
-        
+            echange_ligne(a_c,i,k)
+        coeff = a_c[i][i]
+        for j in range(i + 1,len(a_c)):
+            addition_multiple_ligne(a_c,)
