@@ -11,3 +11,5 @@ def pivot_max(A,j):
         if abs(A[i][j]) > abs(A[i0][j]):
             i0 = i
     return(i0)
+
+Salut
