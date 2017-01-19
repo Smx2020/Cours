@@ -24,9 +24,10 @@ def	matrice_identite(n):				#n entier
 
 def	echange_ligne(A,i1,i2):
 	"echange les lignes i1 et i2 de A"
-	temp = A[i1]
-	A[i1] = A[i2]
-	A[i2] = temp
+	for i in range(len(A[0]):
+		c = A[i1][j]
+		A[i1][j] = A[i2][j]
+		A[i2][j] = c
 	return(A)
 
 def	echange_ligne(A,i1,i2):
