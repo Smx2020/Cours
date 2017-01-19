@@ -40,3 +40,19 @@ def	echange_ligne_c(A,i1,i2):
 		out.append(temp)
 	return(echange_ligne(out,i1,i2))
 
+def	multiplier_ligne(A,i,l):
+	"Multiplie les coeffs de la ligne i par l"
+	for j in range(len(A[i])):
+		A[i][j] = A[i][j] * l
+	return(A)
+
+def	multiplier_ligne_c(A,I,l):
+	"Cree une nouvelle matrice et fais multiplier ligne"
+	out = []
+	for i in range(len(A)):
+		temp = []
+		for j in range(len(A[0])):
+			temp.append(A[i][j])
+		out.append(temp)
+	return(multiplier_ligne(A,I,l))
+
