@@ -58,7 +58,7 @@ def	multiplier_ligne_c(A,I,l):
 
 def addition_ligne(A,i1,i2):
 	"Additionne la ligne i1 et i2"
-	for j in range(A[0]):
+	for j in range(len(A[0])):
 		A[i1][j] = A[i1][j] + A[i2][j]
 	return(A)
 
@@ -74,7 +74,7 @@ def addition_ligne_c(A,i1,i2):
 
 def addition_multiple_ligne(A,i1,i2,l):
 	"Additionne et multiplie la ligne i2 a i2"
-	for j in range(A[0]):
+	for j in range(len(A[0])):
 		A[i1][j] = A[i1][j] + l * A[i2][j]
 	return(A)
 
