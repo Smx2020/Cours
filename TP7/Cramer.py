@@ -9,3 +9,6 @@ def Resolution(A,B):
     for i in range(len(B)):
         temp.append(B[i][-1])
     return(temp)
+
+def Inverse(A):
+    B = "a"
