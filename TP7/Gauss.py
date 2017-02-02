@@ -108,6 +108,7 @@ def Gauss_un_max(A):
 
 def Reduite_max(A):
 	B = Gauss_un_max(A)
-	for i in range(1,len(A)):
-		for j in range(1+i,len(A)-1):
-			addition_multiple_ligne(B,-j-1,-i-1,)
+	for j in range(len(A)-1,0,-1):
+		for i in range(0,j):
+			addition_multiple_ligne(B,i,j,-B[i][j])
+	return(B)

@@ -6,4 +6,5 @@ Ab = [[2,2,-3],[-2,-1,-3],[6,4,4]]
 #print(pivot(Aa,0))
 #print(pivot_max(Aa,0))
 #print(Reduite(Ab))
-#print(Reduite_max(Ab))
+print(Gauss_un_max(Ab))
+print(Reduite_max(Ab))
