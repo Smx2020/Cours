@@ -89,7 +89,7 @@ def pivot_max(A,j):
             i0 = i
     return(i0)
 
-def Reduite(A):
+def Gauss_max(A):
 	a_c = copy(A)
 	for i in range(len(a_c)):
 		k = pivot_max(a_c,i)
@@ -100,8 +100,14 @@ def Reduite(A):
 			addition_multiple_ligne(a_c,j,i,-1 * a_c[j][i] / coeff )	#Calcul les lignes
 	return(a_c)
 
-def Reduite_max(A):
-	B = Reduite(A)
+def Gauss_un_max(A):
+	B = Gauss_max(A)
 	for i in range(len(B)):
-		multiplier_ligne(B,i,1/(B[i][i]))
+		multiplier_ligne(B,i,1/(B[i][i]))	#Multiplie les lignes pour mettre un pivot = 0
 	return(B)
+
+def Reduite_max(A):
+	B = Gauss_un_max(A)
+	for i in range(1,len(A)):
+		for j in range(1+i,len(A)-1):
+			addition_multiple_ligne(B,-j-1,-i-1,)
