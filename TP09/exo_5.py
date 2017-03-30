@@ -47,7 +47,6 @@ def trace_phase__LVa(tmin,tmax,F,G,LX,LY,n):
 				a = 1
 			plt.plot(T,Y)
 		plt.show()
-		a = 0
 
 
 
