@@ -1,10 +1,6 @@
-#def F(a,b,x,y):
-#	return(a*x - b*x*y)
+import matplotlib.pyplot as plt
 
-#def G(c,y,d,x):
-#	return(-1*c*y + d*x*y)
-
-def Eulers1(tmin,tmax,F,G,x0,y0,n):
+def Euler1s(tmin,tmax,F,G,x0,y0,n):
 	h = (tmax-tmin)/n
 	T = [tmin]
 	Y = [y0]
@@ -15,5 +11,31 @@ def Eulers1(tmin,tmax,F,G,x0,y0,n):
 		Y.append(Y[i] + h*G(X[i],Y[i],T[i]))
 	return(T,X,Y)
 
-def trace_Euler1s(tmin,tmax,F,G,x0,y0):
-	
+def trace_Euler1s(tmin,tmax,F,G,x0,y0,n):
+	[T,X,Y] = Euler1s(tmin,tmax,F,G,x0,y0,n)
+	plt.plot(T,X)
+	plt.plot(T,Y)
+	plt.show()
+
+def F1(x,y,t):
+	a = 0.6
+	b = 0.8
+	return(a*x - b*x*y)
+
+def G1(x,y,t):
+	c = 0.6
+	d = 0.3
+	return(-1*c*y + d*x*y)
+
+def F2(x,y,t):
+	a = 1.5
+	b = 0.05
+	return(a*x - b*x*y)
+
+def G2(x,y,t):
+	c = 0.48
+	d = 0.05
+	return(-1*c*y + d*x*y)
+
+trace_Euler1s(0,50,F1,G1,5,1,1000)
+trace_Euler1s(0,50,F2,G2,4,10,1000)
