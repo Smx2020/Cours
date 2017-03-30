@@ -1,7 +1,9 @@
-import scipy
-import matplotlib.pyplot
+simport scipy
+from scipy.integrate import odeint
+from matplotlib.pyplot as plt
 
 def Euler1(tmin,tmax,F,y0,n):
+	"test"
 	h = (tmax-tmin)/n
 	y = [y0]
 	t = [tmin]
@@ -11,3 +13,9 @@ def Euler1(tmin,tmax,F,y0,n):
 	return([y,t])
 
 def trace_Euler1(tmin,tmax,F,y0,n):
+	L = Euler1(tmin,tmax,F,y0,n)
+	solution = odeint(F,y0,L[1])
+	Z = solution[:,0]
+	plt.plot(L[1],L[0])
+	plt.plot(L[1],Z)
+	plt.show()
