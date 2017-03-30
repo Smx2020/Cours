@@ -37,5 +37,21 @@ def G2(x,y,t):
 	d = 0.05
 	return(-1*c*y + d*x*y)
 
+def trace_phase__LVa(tmin,tmax,F,G,LX,LY,n):
+	for i in range(len(LX)):
+		a = 0
+		for j in range(len(LY)):
+			[T,X,Y] = Euler1s(tmin,tmax,F,G,LX[i],LY[j],n)
+			if a == 0:
+				plt.plot(T,X)
+				a = 1
+			plt.plot(T,Y)
+		plt.show()
+		a = 0
+
+
+
 trace_Euler1s(0,50,F1,G1,5,1,1000)
 trace_Euler1s(0,50,F2,G2,4,10,1000)
+
+trace_phase__LVa(0,50,F1,G1,[4],[10,15,30,40],1000)
