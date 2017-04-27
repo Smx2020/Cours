@@ -79,9 +79,15 @@ def Simpson(f,a,b,n):
 	x = a
 	S = 0
 	for i in range(n):
-		S = S + f(x) + 2*f(2*x + h) + f(x + h)
+		S = S + f(x) + 4*f((2*x + h)/2) + f(x + h)
 		x = x + h
 	return(S)
 
 def Van(L):
-	
+	M = []
+	for i in range(len(L)):
+		C = []
+		for j in range(len(L)):
+			C.append(power(L[i],j))
+		M.append(C)
+	return(M)
