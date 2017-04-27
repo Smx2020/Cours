@@ -40,3 +40,5 @@ n = 1000								#nb de coupure du segment
 
 #print(trapz( FX(0,1000,n), FY(fe,0,1000,n) ))		#-0.8863204291
 #print(simps( FX(0,1000,n), FY(fe,0,1000,n) ))		#Erreur
+
+print(Trapezes_a(carre,0,1,1000))

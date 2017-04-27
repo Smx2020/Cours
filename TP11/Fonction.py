@@ -61,3 +61,17 @@ def Riemann_d(f,a,b,n):
 	 	x = a +k*h + h/2
 		S = S + h*f(x)
 	return(S)
+
+def Trapezes_a(f,a,b,n):
+	h = (b-a)/n
+	x = a
+	S = f(a) + f(b)
+	for i in range(1,n):
+		S = S + 2*f(x)
+		x = x + h
+	return(h*S/2)
+
+def Trapezes_b(f,a,b,n):
+	return(0.5*(Riemann_d(f,a,b,n) + Riemann_g(f,a,b,n)))
+
+def Simpson()
