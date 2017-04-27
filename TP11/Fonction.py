@@ -35,3 +35,29 @@ def FX(a,b,n):
 def FY(g,a,b,n):
 	LX = np.linspace(a,b,n)
 	return([g(x) for x in LX])
+
+def Riemann_g(f,a,b,n):
+	h = (b-a)/n
+	x = a
+	S = 0
+	for i in range(k):
+		S = S + h*f(x)
+	 	x = x + h
+	return(S)
+
+def Riemann_d(f,a,b,n):
+	h = (b-a)/n
+	x = a
+	S = 0
+	for i in range(k):
+	 	x = x + h
+		S = S + h*f(x)
+	return(S)
+
+def Riemann_d(f,a,b,n):
+	h = (b-a)/n
+	S = 0
+	for i in range(k):
+	 	x = a +k*h + h/2
+		S = S + h*f(x)
+	return(S)
