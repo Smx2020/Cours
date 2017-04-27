@@ -136,3 +136,38 @@ import os
 #    Question 2 :  Création d'un fichier
 #
 #==========================================================
+
+#f=open('Test2.txt','w')
+#for i in range(2):
+    #f.write('ligne numero  %d  \n' %(i+1) )
+#f.writelines([ 'ligne numero 3 \n' , 'ligne numero  4 ' ] )
+#f.close()
+
+#f=open("Test2.txt",'r')
+#for x in f.readlines() :
+    #print(x)
+#f.close()
+
+# renvoie : toutes les lignes du fichier en sautant des lignes
+
+#f=open("Test2.txt",'r')
+#Lf=f.readlines()
+#Lmots2=[]
+#for x in Lf :
+    #Lmots2.append(x.split())
+#f.close()
+#print(Lmots2)
+
+# renvoie une liste contenants les listes des mots par lignes
+
+#f=open("Test2.txt",'a')
+#f.write('\n'+'ligne numero 5')
+#f.write('\n'+'ligne numero 6')
+#f.close()
+
+# pour vérifier
+
+#f=open("Test2.txt",'r')
+#for x in f.readlines() :
+    #print(x)
+#f.close()
