@@ -12,8 +12,8 @@
 """  Enregistrez-les dans le répertoire où vous travaillerez pour ce TP
 sous Python """
 
+from Fonction import *
 
-import os
 #os.getcwd()   # voir dans quel répertoire vous êtes
 
 #os.chdir('...')  # à complèter avant de valider !
@@ -171,3 +171,21 @@ import os
 #for x in f.readlines() :
     #print(x)
 #f.close()
+
+
+#F1="TP13-Essai-tableau1-Eleves.csv"
+#print(F1)
+#print(taille(F1)[0])   # rep : 26 c'est juste !
+#print(taille(F1)[1])    #  rep : 448   ( je n'ai pas compté )
+
+#T=liste_notes(F1)         #  T=liste_notes(Ftest_OFG)
+#for i in range(3):
+#    print(T[i])			#Afficher les tableau maths physique Anglais
+
+#Tableau_T=np.array([T[0],T[1],T[2]]).T
+
+#print(moyenne(T[0]))    # renvoie 13.92
+#print(moyenne(T[1]))    # renvoie 12.76
+#print(moyenne(T[2]))    # renvoie 11.88
+
+#trace_notes(F1)
