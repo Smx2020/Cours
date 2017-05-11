@@ -2,6 +2,7 @@ import os
 import csv
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.integrate import trapz
 
 def taille(name):
 	f = open(name,'r')
@@ -112,3 +113,9 @@ def trace_vitesse(F):
     plt.plot(T,Y,'r-',label='dY en fonction de T')
     plt.legend(loc='best')
     plt.show()
+
+def trapezes(Lx,Ly):
+	S = 0
+	for k in range(1,len(Lx)):
+		S = S +(Lx[k] - Lx[k-1])*0.5*(Ly[k-1] + Ly[k])
+	return(S)
