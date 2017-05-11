@@ -70,3 +70,45 @@ def trace_notes(fichier):
     plt.plot(X,Y3,'b-',label='anglais')
     plt.legend(loc='best')
     plt.show()
+
+def liste_donnees(F1):    # fichier de type .csv
+    M=[]    # notes de maths
+    P=[]   # notes de physique
+    A=[]   # note d'anglais
+    i=0
+    f1=open(F1,"r")   # on ouvre le fichier
+    lecture=csv.reader(f1)
+    for ligne in lecture:
+        if i!=0:   # on ne tient pas compte de la ligne d'en-tête
+        # il faut transformer les chaines de caractères en nombres flottants
+            M.append(float(ligne[0]))
+            P.append(float(ligne[1]))
+            A.append(float(ligne[2]))
+        i=i+1
+    f1.close()    # on referme le fichier
+    return(M,P,A)
+
+def trace_mouvement(F):
+    L=liste_donnees(F)
+    T=L[0]    # liste des notes de maths ici
+    X=L[1]   # liste des notes de physique
+    Y=L[2]    # liste des notes d'anglais
+    plt.figure()
+    plt.grid(True)
+    plt.plot(T,X,'k-',label='X en fonction de T')
+    plt.plot(T,Y,'r-',label='Y en fonction de T')
+    plt.plot(X,Y,'b-',label='Y en fonction de X')
+    plt.legend(loc='best')
+    plt.show()
+
+def trace_vitesse(F):
+    L=liste_donnees(F)
+    T=L[0]    # liste des notes de maths ici
+    X=L[1]   # liste des notes de physique
+    Y=L[2]    # liste des notes d'anglais
+    plt.figure()
+    plt.grid(True)
+    plt.plot(T,X,'k-',label='dX en fonction de T')
+    plt.plot(T,Y,'r-',label='dY en fonction de T')
+    plt.legend(loc='best')
+    plt.show()
