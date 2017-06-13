@@ -31,8 +31,8 @@ on obtient le nom et la region qui ont un pib >5000000000 et une population <200
 select * from bbc union select * from cia
 
 [a] select nom,superficie from bbc where nom like'Fr%'union select nom,superficie from cia where nom like'Fr%'
-[b] select nom,region from bbc where superficie > 1000 and pib < 1000000000 union 
-    select nom,region from cia where superficie > 1000 and pib < 1000000000 
+[b] select nom,region from bbc where superficie > 1000 and pib < 1000000000 union
+    select nom,region from cia where superficie > 1000 and pib < 1000000000
 
 select nom, region from bbc where nom in(select nom from cia)
 renvoi le nom et region des elements commun au deux table
@@ -61,7 +61,7 @@ renvoie les entrees triees par superficie decroissante
 
 [a] select nom from bbc order by pib desc
 [b] select nom from bbc order by pib/population desc
-[c] select nom,region from bbc order by population/superficie 
+[c] select nom,region from bbc order by population/superficie
 
 #####Question 9
 
@@ -74,4 +74,6 @@ renvoie les entrees triees par superficie decroissante
 [g] select count(title) from album where rank between 100 and 1000
 [h] select title from album where price
 [i] select title from album where price > 30 and rank > 3000
-[j] select 
+[j] select title from album where price < 15 and rank < 1000 order by price
+[k] select count(distinct artist) from album where rank < 5000
+[i]
