@@ -77,3 +77,7 @@ renvoie les entrees triees par superficie decroissante
 [j] select title from album where price < 15 and rank < 1000 order by price
 [k] select count(distinct artist) from album where rank < 5000
 [i]
+
+#####Question 10
+
+SELECT * FROM track where album in (select asin from album where rdate like '1991%' )
