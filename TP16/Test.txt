@@ -96,3 +96,6 @@ SELECT * FROM track WHERE album in (SELECT asin FROM album WHERE rdate LIKE '199
 SELECT * FROM track GROUP BY album HAVING MAX(posn) < posn
 
 ##### Question 13
+
+SELECT title ,MAX(posn) AS pistes from album JOIN track ON asin = album group by album
+SELECT artist from album JOIN track ON asin = album group by artist having MAX(disk)>1 AND artist like 'S%'
