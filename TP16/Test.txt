@@ -19,20 +19,20 @@ renvoie le nom et la population divise par la superficie de toutes les entrees
 [b] SELECT nom, population/superficie as densite FROM bbc
 
 #####Question 6
-SELECT nom, region FROM bbc WHERE population < 2000000 and pib > 5000000000
+SELECT nom, region FROM bbc WHERE population < 2000000 AND pib > 5000000000
 on obtient le nom et la region qui ont un pib >5000000000 et une population <2000000
 
-[b] SELECT nom,region FROM bbc WHERE superficie<2000 and pib > 5000000000
-[c] SELECT nom,superficie,pib/population FROM bbc WHERE nom LIKE'I%' or nom LIKE'J%'
+[b] SELECT nom,region FROM bbc WHERE superficie<2000 AND pib > 5000000000
+[c] SELECT nom,superficie,pib/population FROM bbc WHERE nom LIKE'I%' OR nom LIKE'J%'
 [d] SELECT nom,region,pib/population FROM bbc WHERE pib/population < 1000
-[e] SELECT nom,region,pib/population FROM bbc WHERE pib/population < 1000 and not region != 'Africa'
+[e] SELECT nom,region,pib/population FROM bbc WHERE pib/population < 1000 AND not region != 'Africa'
 
 #####Question 7:
 SELECT * FROM bbc union SELECT * FROM cia
 
 [a] SELECT nom,superficie FROM bbc WHERE nom LIKE'Fr%'union SELECT nom,superficie FROM cia WHERE nom LIKE'Fr%'
-[b] SELECT nom,region FROM bbc WHERE superficie > 1000 and pib < 1000000000 union
-    SELECT nom,region FROM cia WHERE superficie > 1000 and pib < 1000000000
+[b] SELECT nom,region FROM bbc WHERE superficie > 1000 AND pib < 1000000000 union
+    SELECT nom,region FROM cia WHERE superficie > 1000 AND pib < 1000000000
 
 SELECT nom, region FROM bbc WHERE nom in(SELECT nom FROM cia)
 renvoi le nom et region des elements commun au deux table
@@ -42,7 +42,7 @@ renvoie tout les elements de bbc qui ne sont pas dans cia
 bbc prive de cia
 
 [a] SELECT count(nom) FROM cia WHERE nom not in(SELECT nom FROM bbc)
-[b] SELECT count(nom) FROM bbc WHERE nom not in(SELECT nom FROM cia) and pib < 1000000000
+[b] SELECT count(nom) FROM bbc WHERE nom not in(SELECT nom FROM cia) AND pib < 1000000000
 
 #####Question 8:
 SELECT region FROM bbc
@@ -71,10 +71,10 @@ renvoie les entrees triees par superficie decroissante
 [d] SELECT title FROM album ORDER BY rank desc
 [e] SELECT title FROM album WHERE rank <= 100
 [f] SELECT title FROM album ORDER BY rank LIMIT 100
-[g] SELECT count(title) FROM album WHERE rank between 100 and 1000
+[g] SELECT count(title) FROM album WHERE rank between 100 AND 1000
 [h] SELECT title FROM album WHERE price
-[i] SELECT title FROM album WHERE price > 30 and rank > 3000
-[j] SELECT title FROM album WHERE price < 15 and rank < 1000 ORDER BY price
+[i] SELECT title FROM album WHERE price > 30 AND rank > 3000
+[j] SELECT title FROM album WHERE price < 15 AND rank < 1000 ORDER BY price
 [k] SELECT count(distinct artist) FROM album WHERE rank < 5000
 [i]
 
