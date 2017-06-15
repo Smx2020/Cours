@@ -85,4 +85,10 @@ SELECT * FROM track WHERE album in (SELECT asin FROM album WHERE rdate LIKE '199
 ##### Question 11
 
 [a] SELECT song, title, artist FROM album JOIN track  ON album.asin = track.album
-[b] SELECT song, title, artist FROM album JOIN track  ON album.asin = track.album
+[b] SELECT song, title, artist FROM album JOIN track  ON album.asin = track.album WHERE song LIKE 'S%' AND artist LIKE 'B%'
+[c] SELECT song, title, artist FROM album JOIN track  ON album.asin = track.album WHERE song LIKE '%Love%'
+[d] SELECT song, title, artist FROM album JOIN track  ON album.asin = track.album WHERE song LIKE '%Love%' AND artist = 'The Beatles'
+[e] SELECT title, style.style FROM album JOIN style  ON album.asin = style.album
+[f] SELECT title, style.style, song  FROM album JOIN style  ON album.asin = style.album JOIN track ON track.album = album.asin
+
+##### Question 12
