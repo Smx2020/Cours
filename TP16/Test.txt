@@ -1,83 +1,88 @@
 #####Question 3 :
-select * from bbc where nom = 'France'
+SELECT * FROM bbc WHERE nom = 'France'
 revoie la ligne de bbc sur la France
 Recupere tout le tableau
 
 #####Question 4:
-select nom, population from bbc where region = 'Europe'
+SELECT nom, population FROM bbc WHERE region = 'Europe'
 Renvoie les noms et population des villes d'europe
 
-[a] select nom, superficie  from bbc where region = 'Africa'
-[b] select nom, pib from bbc where region = 'South Asia'
-[c] select superficie, pib from bbc where nom = 'France'
+[a] SELECT nom, superficie  FROM bbc WHERE region = 'Africa'
+[b] SELECT nom, pib FROM bbc WHERE region = 'South Asia'
+[c] SELECT superficie, pib FROM bbc WHERE nom = 'France'
 
 #####Question 5
-select nom, population/superficie from bbc
+SELECT nom, population/superficie FROM bbc
 renvoie le nom et la population divise par la superficie de toutes les entrees
 
-[a] select nom, pib/population as pib_par_habitant from bbc
-[b] select nom, population/superficie as densite from bbc
+[a] SELECT nom, pib/population as pib_par_habitant FROM bbc
+[b] SELECT nom, population/superficie as densite FROM bbc
 
 #####Question 6
-select nom, region from bbc where population < 2000000 and pib > 5000000000
+SELECT nom, region FROM bbc WHERE population < 2000000 and pib > 5000000000
 on obtient le nom et la region qui ont un pib >5000000000 et une population <2000000
 
-[b] select nom,region from bbc where superficie<2000 and pib > 5000000000
-[c] select nom,superficie,pib/population from bbc where nom like'I%' or nom like'J%'
-[d] select nom,region,pib/population from bbc where pib/population < 1000
-[e] select nom,region,pib/population from bbc where pib/population < 1000 and not region != 'Africa'
+[b] SELECT nom,region FROM bbc WHERE superficie<2000 and pib > 5000000000
+[c] SELECT nom,superficie,pib/population FROM bbc WHERE nom LIKE'I%' or nom LIKE'J%'
+[d] SELECT nom,region,pib/population FROM bbc WHERE pib/population < 1000
+[e] SELECT nom,region,pib/population FROM bbc WHERE pib/population < 1000 and not region != 'Africa'
 
 #####Question 7:
-select * from bbc union select * from cia
+SELECT * FROM bbc union SELECT * FROM cia
 
-[a] select nom,superficie from bbc where nom like'Fr%'union select nom,superficie from cia where nom like'Fr%'
-[b] select nom,region from bbc where superficie > 1000 and pib < 1000000000 union
-    select nom,region from cia where superficie > 1000 and pib < 1000000000
+[a] SELECT nom,superficie FROM bbc WHERE nom LIKE'Fr%'union SELECT nom,superficie FROM cia WHERE nom LIKE'Fr%'
+[b] SELECT nom,region FROM bbc WHERE superficie > 1000 and pib < 1000000000 union
+    SELECT nom,region FROM cia WHERE superficie > 1000 and pib < 1000000000
 
-select nom, region from bbc where nom in(select nom from cia)
+SELECT nom, region FROM bbc WHERE nom in(SELECT nom FROM cia)
 renvoi le nom et region des elements commun au deux table
 
-select nom,region from bbc where non not in(select nom from cia)
+SELECT nom,region FROM bbc WHERE non not in(SELECT nom FROM cia)
 renvoie tout les elements de bbc qui ne sont pas dans cia
 bbc prive de cia
 
-[a] select count(nom) from cia where nom not in(select nom from bbc)
-[b] select count(nom) from bbc where nom not in(select nom from cia) and pib < 1000000000
+[a] SELECT count(nom) FROM cia WHERE nom not in(SELECT nom FROM bbc)
+[b] SELECT count(nom) FROM bbc WHERE nom not in(SELECT nom FROM cia) and pib < 1000000000
 
 #####Question 8:
-select region from bbc
+SELECT region FROM bbc
 
-select distinct region from bbc
+SELECT distinct region FROM bbc
 on obtient les region mais en enlevant les doublons
 
-[a] select distinct region from cia
-[b] select distinct region from bbc where pib <= 1000000000
+[a] SELECT distinct region FROM cia
+[b] SELECT distinct region FROM bbc WHERE pib <= 1000000000
 
-select nom,region from bbc order by superficie
+SELECT nom,region FROM bbc ORDER BY superficie
 renvoie les entre triee par superficie croissante
 
-select nom,region from bbc order by superficie desc
+SELECT nom,region FROM bbc ORDER BY superficie desc
 renvoie les entrees triees par superficie decroissante
 
-[a] select nom from bbc order by pib desc
-[b] select nom from bbc order by pib/population desc
-[c] select nom,region from bbc order by population/superficie
+[a] SELECT nom FROM bbc ORDER BY pib desc
+[b] SELECT nom FROM bbc ORDER BY pib/population desc
+[c] SELECT nom,region FROM bbc ORDER BY population/superficie
 
 #####Question 9
 
-[a] select title from album where artist = 'U2'
-[b] select title from album order by rdate
-[c] select title from album where rdate like'1991%'
-[d] select title from album order by rank desc
-[e] select title from album where rank <= 100
-[f] select title from album order by rank limit 100
-[g] select count(title) from album where rank between 100 and 1000
-[h] select title from album where price
-[i] select title from album where price > 30 and rank > 3000
-[j] select title from album where price < 15 and rank < 1000 order by price
-[k] select count(distinct artist) from album where rank < 5000
+[a] SELECT title FROM album WHERE artist = 'U2'
+[b] SELECT title FROM album ORDER BY rdate
+[c] SELECT title FROM album WHERE rdate LIKE'1991%'
+[d] SELECT title FROM album ORDER BY rank desc
+[e] SELECT title FROM album WHERE rank <= 100
+[f] SELECT title FROM album ORDER BY rank LIMIT 100
+[g] SELECT count(title) FROM album WHERE rank between 100 and 1000
+[h] SELECT title FROM album WHERE price
+[i] SELECT title FROM album WHERE price > 30 and rank > 3000
+[j] SELECT title FROM album WHERE price < 15 and rank < 1000 ORDER BY price
+[k] SELECT count(distinct artist) FROM album WHERE rank < 5000
 [i]
 
 #####Question 10
 
-SELECT * FROM track where album in (select asin from album where rdate like '1991%' )
+SELECT * FROM track WHERE album in (SELECT asin FROM album WHERE rdate LIKE '1991%' )
+
+##### Question 11
+
+[a] SELECT song, title, artist FROM album JOIN track  ON album.asin = track.album
+[b] SELECT song, title, artist FROM album JOIN track  ON album.asin = track.album
