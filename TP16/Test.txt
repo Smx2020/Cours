@@ -92,3 +92,7 @@ SELECT * FROM track WHERE album in (SELECT asin FROM album WHERE rdate LIKE '199
 [f] SELECT title, style.style, song  FROM album JOIN style  ON album.asin = style.album JOIN track ON track.album = album.asin
 
 ##### Question 12
+
+SELECT * FROM track GROUP BY album HAVING MAX(posn) < posn
+
+##### Question 13
